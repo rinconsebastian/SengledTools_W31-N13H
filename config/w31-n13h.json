@@ -1,0 +1,31 @@
+{
+  "_comment": "Tasmota parameters for the Sengled W31-N13H, verified on real bulbs (Tasmota 16.0.0). Used by w31n13h.py configure/calibrate. VirtualCT is not persisted by Tasmota, so the tool also writes Rule3 (ON System#Boot DO VirtualCT ...).",
+  "model": "W31-N13H",
+  "module": "Sengled WF863 (ESP8266EX), 2 MB flash",
+  "template": {
+    "NAME": "Sengled W31-N13H",
+    "GPIO": [0, 0, 0, 0, 419, 0, 0, 0, 416, 418, 0, 417, 0, 0],
+    "FLAG": 0,
+    "BASE": 18
+  },
+  "pins": {
+    "GPIO12": "PWM1 - red",
+    "GPIO15": "PWM2 - green",
+    "GPIO13": "PWM3 - blue",
+    "GPIO4": "PWM4 - warm white (the only white LED)"
+  },
+  "options": [
+    "SetOption30 1",
+    "SetOption106 1",
+    "Emulation 2"
+  ],
+  "virtual_ct": {
+    "153": "F8E2B480",
+    "500": "000000FF"
+  },
+  "tested_cold_white_values": {
+    "F8E2B480": "default - neutral cold white, white LED at 50% (bulb #1)",
+    "F8EAB480": "same with a bit more green, for a bulb that looked slightly pink (bulb #2)",
+    "F8D89640": "dimmer alternative, white LED at 25%"
+  }
+}
